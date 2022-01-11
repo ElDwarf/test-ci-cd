@@ -5,7 +5,7 @@ from list_tools.tools import (get_number_of_elements,
 
 test_cases = [
     {'list': [2, 5, 7, 8, 9, 1],
-     'max_expected': 2,
+     'max_expected': 9,
      'min_expected': 1,
      'len_expected': 6},
     {'list': [22, 55, 77, 38, 29, 41],
