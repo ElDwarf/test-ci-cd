@@ -26,3 +26,13 @@ def test_read_file_with_error_not_file():
         body_file = read_file('test_file_1.txt')
 
 
+def test_append_text_without_error():
+    expected = "Hola Mundo\nEsto es un archivo dammy\n" \
+               "Aca termina el archivo\n" \
+               "Lo agregue en el test"
+    append_text('test_file.txt', 'Lo agregue en el test')
+    body_file = read_file('test_file.txt')
+    assert expected == body_file, 'No se obtuvo correctamente el contenido.'
+
+
+

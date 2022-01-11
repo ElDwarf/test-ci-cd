@@ -6,4 +6,4 @@ def get_url(url: str):
     if r.status_code == 200:
         return r.status_code, r.text
     else:
-        return r.status_code, None
+       return r.status_code, None
