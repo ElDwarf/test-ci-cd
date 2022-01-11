@@ -1,12 +1,8 @@
 version: 2
-orbs:
-  codecov: codecov/codecov@3.0.0
-
-
 jobs:
   build:
     docker:
-      - image: cimg/python:3.9.6
+      - image: circleci/python:3.6
     steps:
       - checkout
       - restore_cache:
@@ -25,12 +21,6 @@ jobs:
           command: |
             . venv/bin/activate
             pytest
-      - run:
-          name: Run tests and collect coverage
-          command: |
-            . venv/bin/activate
-            pytest --cov=./ --cov-report=xml
-      - codecov/upload
       - store_artifacts:
           path: test-reports/
           destination: python_app
